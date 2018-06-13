@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplicationCore.Data;
 
-namespace WebApplicationCore.Data.Migrations
+namespace WebApplicationCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180613162903_Initial")]
-    partial class Initial
+    [Migration("20180613171830_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
