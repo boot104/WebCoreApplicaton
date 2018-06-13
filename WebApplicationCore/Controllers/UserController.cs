@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevExtreme.AspNet.Data;
+using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -14,25 +16,25 @@ using WebApplicationCore.Models;
 namespace WebApplicationCore.Controllers
 {
     [Route("api/[controller]")]
-    public class ApiUserController : Controller
+    public class UserController : Controller
     {
         private ApplicationDbContext context;
-        public ApiUserController(ApplicationDbContext ctx)
+        public UserController(ApplicationDbContext ctx)
         {
             context = ctx;
         }
         // GET: api/<controller>
         [HttpGet]
-        public List<UserModel> Get(string Id)
+        public object Get(DataSourceLoadOptions loadOptions)
         {
             //return context.Users.Select(s => new UserModel {  Id = s.Id, UserName = s.UserName, Email = s.Email});
 
             var list = new List<UserModel>()
             {
-                new UserModel { Id = "1", UserName = "2", Email = "3"}
-                ,new UserModel { Id = "2", UserName = "3", Email = "5"}
+                new UserModel { Id = 1, UserName = "2", Email = "3"}
+                ,new UserModel { Id = 2, UserName = "3", Email = "5"}
             };
-            return list;
+            return  DataSourceLoader.Load(list, loadOptions);
         }
 
         private object IdentityDbContext<T>()
