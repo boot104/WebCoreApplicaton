@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplicationCore.Data;
+using WebApplicationCore.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,10 +23,16 @@ namespace WebApplicationCore.Controllers
         }
         // GET: api/<controller>
         [HttpGet]
-        public List<IdentityUser> Get()
+        public List<UserModel> Get(string Id)
         {
-            var users = context.Users.ToList();
-            return users;
+            //return context.Users.Select(s => new UserModel {  Id = s.Id, UserName = s.UserName, Email = s.Email});
+
+            var list = new List<UserModel>()
+            {
+                new UserModel { Id = "1", UserName = "2", Email = "3"}
+                ,new UserModel { Id = "2", UserName = "3", Email = "5"}
+            };
+            return list;
         }
 
         private object IdentityDbContext<T>()
