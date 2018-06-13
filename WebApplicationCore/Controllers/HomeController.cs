@@ -18,12 +18,6 @@ namespace WebApplicationCore.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-            var t = "";
-            var test33 = "test 3";
-            var test4 = "test 4";
-            var test5 = "test 5";
-            var test6 = "test 6";
-            var test7 = "test 7";
             return View();
         }
 
@@ -44,5 +38,6 @@ namespace WebApplicationCore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
