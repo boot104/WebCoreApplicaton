@@ -5,7 +5,6 @@ D:\GitHub\WebApplicationCore\WebApplicationCore\bin\Debug\netcoreapp2.1\WebAppli
 D:\GitHub\WebApplicationCore\WebApplicationCore\bin\Debug\netcoreapp2.1\WebApplicationCore.pdb
 D:\GitHub\WebApplicationCore\WebApplicationCore\bin\Debug\netcoreapp2.1\WebApplicationCore.Views.dll
 D:\GitHub\WebApplicationCore\WebApplicationCore\bin\Debug\netcoreapp2.1\WebApplicationCore.Views.pdb
-D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.csprojAssemblyReference.cache
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.csproj.CoreCompileInputs.cache
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.RazorAssemblyInfo.cache
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.RazorAssemblyInfo.cs
@@ -33,3 +32,4 @@ D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebAppli
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.dll
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.pdb
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.csproj.CopyComplete
+D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DevExtremeLayout.g.cshtml.cs
