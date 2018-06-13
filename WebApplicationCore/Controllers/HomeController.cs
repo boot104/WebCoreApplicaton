@@ -19,6 +19,7 @@ namespace WebApplicationCore.Controllers
         {
             ViewData["Message"] = "Your application description page.";
             var t = "";
+            var test33 = "test 3";
             return View();
         }
 
