@@ -21,6 +21,7 @@ namespace WebApplicationCore.Controllers
             var t = "";
             var test33 = "test 3";
             var test4 = "test 4";
+            var test6 = "test 6";
             return View();
         }
 
