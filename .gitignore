@@ -225,3 +225,7 @@ ModelManifest.xml
 /FSCBackOfficeV1.BLL/Reports/Reporting/fsrate_trial.cs
 /FSCBackOfficeV1.BLL/Reports/Reporting/fsrate_trial.Designer.cs
 /FSCBackOfficeV1.BLL/Reports/Reporting/fsrate_trial.resx
+
+WebApplicationCore/bin/
+
+WebApplicationCore/obj/
