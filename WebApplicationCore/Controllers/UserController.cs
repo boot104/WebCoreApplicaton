@@ -2,30 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevExtreme.AspNet.Data;
+using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using WebApplicationCore.Data;
+using WebApplicationCore.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApplicationCore.Controllers
 {
     [Route("api/[controller]")]
-    public class ApiUserController : Controller
+    public class UserController : Controller
     {
         private ApplicationDbContext context;
-        public ApiUserController(ApplicationDbContext ctx)
+        public UserController(ApplicationDbContext ctx)
         {
             context = ctx;
         }
         // GET: api/<controller>
         [HttpGet]
-        public List<IdentityUser> Get()
+        public object Get(DataSourceLoadOptions loadOptions)
         {
-            var users = context.Users.ToList();
-            return users;
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email, Password = s.PasswordHash}), loadOptions);
+            
+           //return DataSourceLoader.Load(context.Users.Select(s => new UserModel { Id = s.Id, UserName = s.UserName, Email = s.Email }), loadOptions);
         }
 
         private object IdentityDbContext<T>()
@@ -35,9 +40,10 @@ namespace WebApplicationCore.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public object Get(int id)
         {
-            return "value";
+            DataSourceLoadOptions loadOptions = new DataSourceLoadOptions();
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email, Password = s.PasswordHash }), loadOptions);
         }
 
         // POST api/<controller>
