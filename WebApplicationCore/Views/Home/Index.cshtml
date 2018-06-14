@@ -64,7 +64,7 @@
     <div class="col-md-6"></div>
 </div>
 <div class="row" style="padding:10px">
-    <div class="col-md-9">
+    <div class="col-md-12">
 @(Html.DevExtreme().DataGrid<UserModel>()
     .DataSource(ds => ds.Mvc()
         .Controller("User")
@@ -79,10 +79,9 @@
         columns.AddFor(m => m.UserName);
 
         columns.AddFor(m => m.Email);
+
+        //columns.AddFor(m => m.Password);
     })
 )
-    </div>
-    <div class="col-md-3">
-       
     </div>
 </div>

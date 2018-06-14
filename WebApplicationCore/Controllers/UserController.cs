@@ -28,7 +28,7 @@ namespace WebApplicationCore.Controllers
         [HttpGet]
         public object Get(DataSourceLoadOptions loadOptions)
         {
-            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email}), loadOptions);
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email, Password = s.PasswordHash}), loadOptions);
             
            //return DataSourceLoader.Load(context.Users.Select(s => new UserModel { Id = s.Id, UserName = s.UserName, Email = s.Email }), loadOptions);
         }
@@ -43,7 +43,7 @@ namespace WebApplicationCore.Controllers
         public object Get(int id)
         {
             DataSourceLoadOptions loadOptions = new DataSourceLoadOptions();
-            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email }), loadOptions);
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email, Password = s.PasswordHash }), loadOptions);
         }
 
         // POST api/<controller>
