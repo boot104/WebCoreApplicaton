@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using WebApplicationCore.Data;
 using WebApplicationCore.Models;
 
@@ -27,14 +28,9 @@ namespace WebApplicationCore.Controllers
         [HttpGet]
         public object Get(DataSourceLoadOptions loadOptions)
         {
-            //return context.Users.Select(s => new UserModel {  Id = s.Id, UserName = s.UserName, Email = s.Email});
-
-            var list = new List<UserModel>()
-            {
-                new UserModel { Id = 1, UserName = "2", Email = "3"}
-                ,new UserModel { Id = 2, UserName = "3", Email = "5"}
-            };
-            return  DataSourceLoader.Load(list, loadOptions);
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email}), loadOptions);
+            
+           //return DataSourceLoader.Load(context.Users.Select(s => new UserModel { Id = s.Id, UserName = s.UserName, Email = s.Email }), loadOptions);
         }
 
         private object IdentityDbContext<T>()
@@ -44,9 +40,10 @@ namespace WebApplicationCore.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public object Get(int id)
         {
-            return "value";
+            DataSourceLoadOptions loadOptions = new DataSourceLoadOptions();
+            return DataSourceLoader.Load(context.Users.Select(s => new UserModel { UserId = s.Id, UserName = s.UserName, Email = s.Email }), loadOptions);
         }
 
         // POST api/<controller>
