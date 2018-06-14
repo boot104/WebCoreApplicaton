@@ -33,4 +33,3 @@ D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebAppli
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.dll
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.pdb
 D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.csproj.CopyComplete
-D:\GitHub\WebApplicationCore\WebApplicationCore\obj\Debug\netcoreapp2.1\WebApplicationCore.csprojAssemblyReference.cache

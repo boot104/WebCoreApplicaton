@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using WebApplicationCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Serialization;
 
 namespace WebApplicationCore
 {
@@ -28,9 +27,6 @@ namespace WebApplicationCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-            .AddMvc()
-            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
