@@ -53,30 +53,35 @@
     </a>
 </div>*@
 
-<div class="row">
-    <div class="col-md-9">
-        Test
-
-@(Html.DevExtreme().DataGrid<Microsoft.AspNetCore.Identity.IdentityUser>()
+<div class="row" style="padding:10px">
+    <div class="col-md-6">
+        <div style="color:red">
+            @(Html.DevExtreme().TextBox()
+                                      .Value(@User.Identity.Name)
+            )
+        </div>
+    </div>
+    <div class="col-md-6"></div>
+</div>
+<div class="row" style="padding:10px">
+    <div class="col-md-12">
+@(Html.DevExtreme().DataGrid<UserModel>()
     .DataSource(ds => ds.Mvc()
-        .Controller("api/ApiUserController")
+        .Controller("User")
         .LoadAction("Get")
-        .Key("Id")
+        .Key("UserId")
     )
     .RemoteOperations(true)
     .Columns(columns => {
 
-        columns.AddFor(m => m.Id);
+        columns.AddFor(m => m.UserId);
 
         columns.AddFor(m => m.UserName);
 
         columns.AddFor(m => m.Email);
+
+        //columns.AddFor(m => m.Password);
     })
 )
-    </div>
-    <div class="col-md-3">
-        @(Html.DevExtreme().TextBox()
-                           .Value("John Smith")
-        )
     </div>
 </div>
